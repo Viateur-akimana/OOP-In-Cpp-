@@ -27,7 +27,7 @@ public:
     cout << "Name of the employee-" << name <<endl;
     cout << "Company of the employee-" << company << endl;
     cout << "Age of the employee" << age << endl;
-   }
+   };
 };
 
 int main(){
