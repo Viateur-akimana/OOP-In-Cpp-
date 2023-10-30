@@ -2,7 +2,7 @@
 using namespace std;
 
 class Employee {
-protected:
+public:
     string company;
     string name;
     int age;
@@ -33,7 +33,7 @@ public:
     }
 };
 
-class Developer : public Employee {
+class Developer : Employee {
 public:
     string language;
     Developer(string name, string company, int age, string language)
@@ -42,13 +42,26 @@ public:
         this->language = language; // Use 'this->' to refer to the member variable of the class
     }
 
-    void favoriteLanguage() {
-        cout << "My name is " << name<< ". My favorite language is " <<language << endl;
+    void fixBug() {
+        cout << "My name is " << name << ". My favorite language is " <<language << endl;
     }
+};
+class Teacher:Employee{
+public:
+string lesson;
+
+Teacher(string name, string company, int age, string lesson):
+Employee(name,company,age){
+
+}
+void prepareLesson(){
+cout <<name << "is preparing the exam of " << lesson <<endl;
+}
 };
 
 int main() {
-    Developer d = Developer("viateur", "RCA", 89, "c++");
-    d.favoriteLanguage();
+    Developer d = Developer("linter", "RCA", 89, "c++");
+     Teacher t = Teacher("linter", "RCA", 89, "c++");
+     d.fixBug();
     return 0; // Indicates successful execution of the program
 }
